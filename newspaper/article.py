@@ -358,8 +358,7 @@ class Article(object):
         """Every article object has a special directory to store data in from
         initialization to garbage collection
         """
-        res_dir_fn = 'article_resources'
-        resource_directory = os.path.join(settings.TOP_DIRECTORY, res_dir_fn)
+        resource_directory = settings.ARTICLE_DIRECTORY
         if not os.path.exists(resource_directory):
             os.mkdir(resource_directory)
         dir_path = os.path.join(resource_directory, '%s_' % self.link_hash)

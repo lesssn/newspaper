@@ -59,7 +59,7 @@ class Configuration(object):
         self.http_success_only = True
 
         # English is the fallback
-        self._language = 'en'
+        self._language = 'zh'
 
         # Unique stopword classes for oriental languages, don't toggle
         self.stopwords_class = StopWords

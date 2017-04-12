@@ -47,11 +47,20 @@ MEMO_DIR = os.path.join(TOP_DIRECTORY, MEMO_FILE)
 if not os.path.exists(MEMO_DIR):
     os.mkdir(MEMO_DIR)
 
+
 # category and feed cache
 CF_CACHE_DIRECTORY = 'feed_category_cache'
 ANCHOR_DIRECTORY = os.path.join(TOP_DIRECTORY, CF_CACHE_DIRECTORY)
 
 if not os.path.exists(ANCHOR_DIRECTORY):
     os.mkdir(ANCHOR_DIRECTORY)
+
+
+# article resources
+ARTICLE_RES_DIRECTORY = 'article_resources'
+ARTICLE_DIRECTORY = os.path.join(TOP_DIRECTORY, ARTICLE_RES_DIRECTORY)
+
+if not os.path.exists(ARTICLE_DIRECTORY):
+    os.mkdir(ARTICLE_DIRECTORY)
 
 TRENDING_URL = 'http://www.google.com/trends/hottrends/atom/feed?pn=p1'

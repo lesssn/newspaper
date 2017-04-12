@@ -9,8 +9,12 @@ __author__ = 'Lucas Ou-Yang'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2014, Lucas Ou-Yang'
 
+import os
+import shutil
 import feedparser
 
+
+from . import settings
 from .article import Article
 from .configuration import Configuration
 from .mthreading import NewsPool
@@ -92,3 +96,24 @@ def fulltext(html, language='en'):
     top_node = extractor.post_cleanup(top_node)
     text, article_html = output_formatter.get_formatted(top_node)
     return text
+
+
+def clear_cache():
+    res_dir_fn = settings.ARTICLE_DIRECTORY
+    resource_directory = os.path.join(settings.TOP_DIRECTORY, res_dir_fn)
+    if os.path.exists(resource_directory):
+        os.removedirs(resource_directory)
+        os.mkdir(resource_directory)
+
+    anchor_directory = settings.ANCHOR_DIRECTORY
+    if os.path.exists(anchor_directory):
+        shutil.rmtree(anchor_directory)
+        os.mkdir(anchor_directory)
+
+    memo_directory = settings.MEMO_DIR
+    if os.path.exists(memo_directory):
+        shutil.rmtree(memo_directory)
+        os.mkdir(memo_directory)
+
+    return resource_directory
+
