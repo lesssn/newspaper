@@ -58,11 +58,10 @@ class Configuration(object):
         # Fail for error respones (e.g. 404 page)
         self.http_success_only = True
 
-        # English is the fallback
+        # Change Chinese to default
         self._language = 'zh'
-
-        # Unique stopword classes for oriental languages, don't toggle
-        self.stopwords_class = StopWords
+		# Set Chinese stopwords for default language
+        self.stopwords_class = StopWordsChinese
 
         self.browser_user_agent = 'newspaper/%s' % __version__
         self.request_timeout = 7
