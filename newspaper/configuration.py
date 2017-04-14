@@ -21,19 +21,18 @@ log = logging.getLogger(__name__)
 
 
 class Configuration(object):
-
     def __init__(self):
         """
         Modify any of these Article / Source properties
         TODO: Have a seperate ArticleConfig and SourceConfig extend this!
         """
         self.MIN_WORD_COUNT = 300  # num of word tokens in text
-        self.MIN_SENT_COUNT = 7    # num of sentence tokens
-        self.MAX_TITLE = 200       # num of chars
-        self.MAX_TEXT = 100000     # num of chars
-        self.MAX_KEYWORDS = 35     # num of strings in list
-        self.MAX_AUTHORS = 10      # num strings in list
-        self.MAX_SUMMARY = 5000    # num of chars
+        self.MIN_SENT_COUNT = 7  # num of sentence tokens
+        self.MAX_TITLE = 200  # num of chars
+        self.MAX_TEXT = 100000  # num of chars
+        self.MAX_KEYWORDS = 35  # num of strings in list
+        self.MAX_AUTHORS = 10  # num strings in list
+        self.MAX_SUMMARY = 5000  # num of chars
         self.MAX_SUMMARY_SENT = 5  # num of sentences
 
         # max number of urls we cache for each news source
@@ -60,7 +59,8 @@ class Configuration(object):
 
         # Change Chinese to default
         self._language = 'zh'
-		# Set Chinese stopwords for default language
+
+        # Set Chinese stopwords for default language
         self.stopwords_class = StopWordsChinese
 
         self.browser_user_agent = 'newspaper/%s' % __version__
